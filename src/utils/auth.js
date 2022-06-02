@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://diploma.backend.nomoredomains.xyz';
-// export const BASE_URL = 'http://localhost:3001';
+// export const BASE_URL = 'https://diploma.backend.nomoredomains.xyz';
+export const BASE_URL = 'http://localhost:3001';
 
 export const response = (res) =>
   res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
