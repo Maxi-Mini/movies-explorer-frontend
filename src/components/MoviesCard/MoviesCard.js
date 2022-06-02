@@ -9,15 +9,8 @@ const MoviesCard = (props) => {
   const card = props.card;
 
   const savedMovies = props.savedMovies;
-
-  // const isSaved = savedMovies.some(
-  //   (i) => i === currentUser._id
-  // );
-
-  console.log(currentUser);
-
-  let userSavedMoviesId = savedMovies.map((i) => i.movieId);
-  const [isSaved, setIsSaved] = React.useState();
+  
+  const isSaved = savedMovies.some(id => id.movieId === card.id && id.owner === currentUser._id);
 
   const location = useLocation().pathname;
 
@@ -28,14 +21,6 @@ const MoviesCard = (props) => {
   function handleDeleteCard() {
     props.onDeleteCard(card);
   }
-
-  React.useEffect(() => {
-    if (userSavedMoviesId && userSavedMoviesId.includes(card.id)) {
-      setIsSaved(true);
-    } else {
-      setIsSaved(false);
-    }
-  }, [userSavedMoviesId, card.id]);
 
   return (
     <div className='movie-card'>

@@ -85,8 +85,8 @@ class Api {
 }
 
 export const api = new Api({
-  // url: 'https://diploma.backend.nomoredomains.xyz',
-  url: 'http://localhost:3001',
+  url: 'https://diploma.backend.nomoredomains.xyz',
+  // url: 'http://localhost:3001',
 });
 
 export default api;
