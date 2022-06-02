@@ -1,9 +1,10 @@
 import './Navigation.css';
 import closeButton from '../../images/cclose-button.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import user from '../../images/header-user.svg';
 
 const Navigation = (props) => {
+  const location = useLocation();
   return (
     <nav className={`navigation ${props.isOpen ? 'navigation_opened' : ''}`}>
       <div className='navigation__overlay'></div>
@@ -11,41 +12,39 @@ const Navigation = (props) => {
         <img src={closeButton} alt='закрыть'></img>
       </button>
       <NavLink
-        exact
         to='/'
-        className='navigation__link'
-        activeClassName='navigation__link_active'
+        className={`navigation__link ${
+          location.pathname === '/' ? 'navigation__link_active' : ''
+        }`}
         onClick={props.onClose}
       >
         Главная
       </NavLink>
       <NavLink
-        exact
         to='/movies'
-        className='navigation__link'
-        activeClassName='navigation__link_active'
+        className={`navigation__link ${location.pathname === '/movies' ? 'navigation__link_active' :''}`}
         onClick={props.onClose}
       >
         Фильмы
       </NavLink>
       <NavLink
-        exact
         to='/saved-movies'
-        className='navigation__link'
-        activeClassName='navigation__link_active'
+        className={`navigation__link ${location.pathname === '/saved-movies' ? 'navigation__link_active' :''}`}
         onClick={props.onClose}
       >
         Сохраненные фильмы
       </NavLink>
       <NavLink
-        exact
         to='/profile'
-        className='navigation__link'
-        activeClassName='navigation__link_active'
+        className={`navigation__link ${location.pathname === '/profile' ? 'navigation__link_active' :''}`}
         onClick={props.onClose}
       >
         Аккаунт
-        <img className='navigation__link-user' src={user} alt='иконка юзер'></img>
+        <img
+          className='navigation__link-user'
+          src={user}
+          alt='иконка юзер'
+        ></img>
       </NavLink>
     </nav>
   );

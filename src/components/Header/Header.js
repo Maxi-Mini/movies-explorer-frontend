@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Navigation from '../Navigation/Navigation';
 
-const Header = () => {
+const Header = (props) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openMenu = () => {
@@ -16,13 +16,12 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-
   return (
     <header className='header'>
       <Link to='/' className='header__homelink'>
         <img className='header__logo' src={logo} alt='логотип'></img>
       </Link>
-      {location.pathname === '/' && (
+      {location.pathname === '/' && props.loggedIn === false && (
         <nav className='header__signblock'>
           <Link className='header__register' to='/signup'>
             Регистрация
@@ -32,7 +31,7 @@ const Header = () => {
           </Link>
         </nav>
       )}
-      {location.pathname !== '/' && (
+      {location.pathname !== '/' || props.loggedIn === true ? (
         <nav className='header__navblock'>
           <div className='header__navblock_films'>
             <Link className='header__films link' to='/movies'>
@@ -50,6 +49,8 @@ const Header = () => {
             <img src={menu} alt='бургер меню'></img>
           </button>
         </nav>
+      ) : (
+        <></>
       )}
       {<Navigation isOpen={isMenuOpen} onClose={closeMenu} />}
     </header>

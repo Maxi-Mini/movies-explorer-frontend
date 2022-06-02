@@ -36,7 +36,7 @@
   margin-bottom: 10px;
 }
 
-.form__input_password {
+.form__input_type_error {
   color: #ee3465;
 }
 
@@ -49,6 +49,7 @@
 }
 
 .form__error {
+  display: block;
   font-size: 10px;
   font-weight: 400;
   line-height: 12px;
@@ -74,6 +75,14 @@
   padding: 0;
   border: none;
   margin: 69px 0 16px;
+}
+.form__button_disabled {
+  background: #69717e;
+}
+
+.form__button_active:hover {
+  background: rgba(66, 133, 244, 0.65);
+  transition: 0.25s;
 }
 
 .form__bottom_text {

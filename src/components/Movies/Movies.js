@@ -1,15 +1,26 @@
 import './Movies.css';
+import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
-import Preloader from '../Preloader/Preloader';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import { movies } from '../../utils/constants';
 
-const Movies = () => {
+const Movies = (props) => {
+  const [queryError, setQueryError] = React.useState(true);
   return (
     <div>
-      <SearchForm />
-      <Preloader />
-      <MoviesCardList cards={movies} />
+      <SearchForm
+        onUpdateSearch={props.onUpdateSearch}
+        setQueryError={setQueryError}
+        checkedState={props.checkedState}
+        query={props.query}
+      />
+      <MoviesCardList
+        cards={props.searchedMovies}
+        savedMovies={props.savedMovies}
+        onSaveCard={props.onSaveCard}
+        searchedMoviesError={props.searchedMoviesError}
+        queryError={queryError}
+        preloader={props.preloader}
+      />
     </div>
   );
 };
