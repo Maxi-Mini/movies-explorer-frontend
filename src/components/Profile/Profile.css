@@ -54,6 +54,7 @@
 .profile__buttons {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .profile__button {
@@ -72,11 +73,33 @@
   cursor: pointer;
 }
 
-.profile__button:last-of-type {
+.profile__button_disabled{
+  opacity: 65%;
+}
+
+.profile__button_exit{
+  background: none;
+  border: none;
+  padding-bottom: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  transition: opacity 0.5s linear;
   color: #ee3465;
   padding: 0;
   font-weight: 500;
 }
+
+.profile__button_exit:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+/* .profile__button:last-of-type {
+  color: #ee3465;
+  padding: 0;
+  font-weight: 500;
+} */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .profile__header{

@@ -8,7 +8,7 @@ const Portfolio = () => {
         className='portfolio__link'
         target='_blank'
         rel='noreferrer'
-        href='https://github.com/Maxi-Mini/how-to-learn'
+        href='https://maxi-mini.github.io/how-to-learn/'
       >
         Статичный сайт
       </a>
@@ -16,7 +16,7 @@ const Portfolio = () => {
         className='portfolio__link'
         target='_blank'
         rel='noreferrer'
-        href='https://github.com/Maxi-Mini/russian-travel'
+        href='https://maxi-mini.github.io/russian-travel/'
       >
         Адаптивный сайт
       </a>
