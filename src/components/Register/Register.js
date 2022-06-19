@@ -20,7 +20,7 @@ const Register = (props) => {
   React.useEffect(() => {
     resetForm();
     props.setApiError('');
-  }, [props, resetForm]);
+  }, [resetForm]);
 
   return (
     <Form

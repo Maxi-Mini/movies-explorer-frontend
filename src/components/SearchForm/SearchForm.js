@@ -1,7 +1,6 @@
 import './SearchForm.css';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import findicon from '../../images/find-button.svg';
 
 const SearchForm = (props) => {
   const location = useLocation().pathname;
@@ -37,11 +36,13 @@ const SearchForm = (props) => {
         <input
           placeholder='Фильм'
           className='searchform__input'
-          type="search" id="search" value={query || ""}
+          type='search'
+          id='search'
+          value={query || ''}
           required
           onChange={handleSearchChange}
         ></input>
-        <button className='searchform__button'></button>
+        <button type="submit"  className='searchform__button'></button>
       </div>
       <div className='searchform__checkbox-container'>
         <label className='searchform__checkbox'>

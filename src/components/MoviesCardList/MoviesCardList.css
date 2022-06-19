@@ -13,6 +13,21 @@
   justify-content: center;
 }
 
+.movies-cardlist__elements_saved-movies{
+  padding: 0 0 170px 0;
+}
+
+.movies-cardlist__elements_error{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.movies-cardlist__error-message{
+  margin: 0;
+  padding: 0 20px;
+}
+
 
 .movies-cardlist__button {
   background: #2f2f2f;

@@ -14,7 +14,7 @@ const SavedMovies = (props) => {
         query={props.query}
       />
       <MoviesCardList
-        cards={props.savedMovies}
+        cards={props.searchedMovies}
         searchedMoviesError={props.searchedMoviesError}
         savedMovies={props.savedMovies}
         queryError={queryError}

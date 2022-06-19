@@ -40,6 +40,7 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState(null);
   const [preloader, setPreloader] = useState(true);
   const [movies, setMovies] = useState([]);
+  
   const [savedMovies, setSavedMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
@@ -314,7 +315,7 @@ const App = () => {
     );
     const [savedMoviesId] = savedMovies.filter((id) => id.movieId === card.id);
 
-    if (isSaved === false) {
+    if (!isSaved) {
       api
         .saveMovie(card, !isSaved)
         .then((newMovie) => {
@@ -354,6 +355,7 @@ const App = () => {
             setErrorTooltipPopup(internalServerMessage);
           }
         });
+      console.log('err');
     }
   }
 
